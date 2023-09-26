@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Coches</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='inicio.css') }}">
+    </head>
+
+    <body>
+        <h1 class="text-center">Coches App</h1>
+
+        <form class="p-3 text-center" action='/', method="post" enctype="multipart/form-data">
+            <input class="form-control" type="file" name="imagen" >
+            <input class="btn btn-primary mt-3"type="submit" value="Analizar" >
+        </form>
+
+        {% if prediccion %}
+            <p class="text-center"> El coche es un {{ prediccion }}</p>
+        {% endif %}
+    </body>
+</html>
